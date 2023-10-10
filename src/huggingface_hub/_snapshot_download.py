@@ -198,14 +198,7 @@ def snapshot_download(
     )
     commit_hash = repo_info.sha
     snapshot_folder = os.path.join(storage_folder, "snapshots", commit_hash)
-    # if passed revision is not identical to commit_hash
-    # then revision has to be a branch name or tag name.
-    # In that case store a ref.
-    if revision != commit_hash:
-        ref_path = os.path.join(storage_folder, "refs", revision)
-        os.makedirs(os.path.dirname(ref_path), exist_ok=True)
-        with open(ref_path, "w") as f:
-            f.write(commit_hash)
+    
 
     # we pass the commit_hash to hf_hub_download
     # so no network call happens if we already
