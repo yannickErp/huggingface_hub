@@ -1372,8 +1372,8 @@ def hf_hub_download(
     blob_path = os.path.join(storage_folder, "blobs", etag)
     pointer_path = _get_pointer_path(storage_folder, commit_hash, relative_filename)
 
-    os.makedirs(os.path.dirname(blob_path), exist_ok=True)
-    os.makedirs(os.path.dirname(pointer_path), exist_ok=True)
+    #os.makedirs(os.path.dirname(blob_path), exist_ok=True)
+    #os.makedirs(os.path.dirname(pointer_path), exist_ok=True)
     # if passed revision is not identical to commit_hash
     # then revision has to be a branch name or tag name.
     # In that case store a ref.
